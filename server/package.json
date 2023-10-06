@@ -4,11 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "frontend_start": "cd frontend && npm start",
-    "frontend_build": "cd frontend && npm run build",
-    "backend_start": "nodemon ./bin/wwww",
-    "dev": "concurrently \"npm run frontend_start\" \"npm run backend_start\"",
-    "build": "concurrently \"npm run frontend_build\" \"npm run backend_start\""
+    "build": "node ./bin/www",
+    "dev": "nodemon ./bin/wwww"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
