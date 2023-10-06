@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "frontend_start": "cd frontend && npm start",
+    "frontend_build": "cd frontend && npm run build",
+    "backend_start": "nodemon ./bin/wwww",
+    "dev": "concurrently \"npm run frontend_start\" \"npm run backend_start\"",
+    "build": "concurrently \"npm run frontend_build\" \"npm run backend_start\""
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "express": "~4.16.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mongoose": "^7.5.3",
+    "morgan": "~1.9.1",
+    "nodemon": "^3.0.1"
+  }
+}
