@@ -29,7 +29,7 @@ carController.getAllCars=async(req,res,next)=>{
         //mongoose query
         const listOfFound= await Car.find(filter);
         const filerredList = listOfFound.filter((e,i)=>i>=(page-1)*carsPerPage && i<page*carsPerPage);
-        sendResponse(res,200,true,{cars:filerredList,total:listOfFound(listOfFound.length/carsPerPage)},null,"Found list of cars success")
+        sendResponse(res,200,true,{cars:filerredList,total:Math.ceil(listOfFound.length/carsPerPage)},null,"Found list of cars success")
     }catch(err){
         next(err)
     }
